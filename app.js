@@ -24,6 +24,11 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/about', aboutRouter);
 
+app.use((req, res) => {
+  res.writeHead(200, { "Content-Type": "text/plain" })
+  res.end('hhhhhhhhj')
+})
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
